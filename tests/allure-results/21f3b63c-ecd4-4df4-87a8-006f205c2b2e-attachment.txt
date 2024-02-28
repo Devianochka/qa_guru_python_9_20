@@ -1,0 +1,1 @@
+curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 51' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: python-requests/2.31.0' -d 'Email=di7051%40gmail.com&Password=T9tBaN%21jx%24XqC' https://demowebshop.tricentis.com/login

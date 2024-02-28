@@ -1,9 +1,10 @@
-from selene import browser, by, have
+import requests
+from selene import browser, have
 from tests.conftest import LOGIN, PASSWORD, BASE_URL
 from utils.utils import send_post_request
 
 
-def test_add_product_with_params(open_browser):
+def test_add_product_with_params():
     response = send_post_request("login", data={"Email": LOGIN, "Password": PASSWORD}, allow_redirects=False)
     cookies = response.cookies.get("NOPCOMMERCE.AUTH")
     browser.driver.add_cookie({"name": "NOPCOMMERCE.AUTH", "value": cookies})
@@ -21,7 +22,7 @@ def test_add_product_with_params(open_browser):
     browser.element(".update-cart-button").press_enter()
 
 
-def test_add_product_without_params(open_browser):
+def test_add_product_without_params():
     response = send_post_request("login", data={"Email": LOGIN, "Password": PASSWORD},
                                  allow_redirects=False)
     cookies = response.cookies.get("NOPCOMMERCE.AUTH")
